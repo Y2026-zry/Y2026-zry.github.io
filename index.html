@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="zh-CN" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>张瑞瑛 (Zhang Ruiying) · 旷野与智能</title>
-
-  <!-- Google Fonts: Elegant Chinese Calligraphy & Serifs -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>张瑞瑛 · 个人履历 | 辽阔草原与静谧心境</title>
+  
+  <!-- Google Fonts: Noto Serif SC for poetic storybook feel & Plus Jakarta Sans / Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             prairie: {
-              sky: '#EDF5F7',       // Soft misty morning sky
-              cloud: '#F9FBFB',     // Whispering cloud
-              mist: '#E2EBE5',      // Horizon haze
-              sage: '#8FA89B',      // Sage leaf
-              grass: '#5C7A68',     // Deep prairie grass
-              earth: '#C8B9A6',     // Warm windblown steppe sand
-              clay: '#968172',      // Warm tactile earth
-              dark: '#1F2A24',      // Soft poetic dusk charcoal
-              cream: '#FAF8F5'      // Parchment cream
+              sky: '#EDF4F7',        // Pale Mongolian morning sky
+              'sky-light': '#F7FAFC',
+              mist: '#E3ECE9',       // Pale misty dew
+              sage: '#8FA89B',       // Muted sage green
+              'sage-deep': '#5D7A6C', // Deep grassland earth green
+              moss: '#B5C4B9',       // Soft moss tone
+              cream: '#FDFBF7',      // Warm linen / unbleached paper
+              warmth: '#F4EFEA',     // Mongolian felt tent & sand undertone
+              clay: '#8C7A6B',       // Steppe soil
+              charcoal: '#37413C',   // Soft charcoal instead of pure black
+              muted: '#68776F',      // Secondary reading grey
+              border: '#E2DBD0',     // Subtle natural line
             }
           },
           fontFamily: {
             serif: ['"Noto Serif SC"', 'serif'],
-            sans: ['"Noto Sans SC"', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
             calligraphy: ['"Ma Shan Zheng"', 'cursive']
           },
           animation: {
-            'sway-slow': 'sway 8s ease-in-out infinite',
-            'float-gentle': 'float 6s ease-in-out infinite',
-            'breeze': 'breeze 12s linear infinite',
+            'float-slow': 'float 8s ease-in-out infinite',
+            'breeze': 'breeze 12s ease-in-out infinite alternate',
           },
           keyframes: {
-            sway: {
-              '0%, 100%': { transform: 'rotate(-1.5deg)' },
-              '50%': { transform: 'rotate(1.5deg)' }
-            },
             float: {
               '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-8px)' }
+              '50%': { transform: 'translateY(-8px)' },
             },
             breeze: {
-              '0%': { transform: 'translateX(-5%)' },
-              '50%': { transform: 'translateX(5%)' },
-              '100%': { transform: 'translateX(-5%)' }
+              '0%': { transform: 'rotate(-0.5deg) translateX(0px)' },
+              '100%': { transform: 'rotate(0.8deg) translateX(6px)' },
             }
           }
         }
@@ -60,420 +61,427 @@
   </script>
 
   <style>
-    /* Grain texture to evoke natural paper and steppe air */
-    .prairie-noise {
-      background-image: radial-gradient(rgba(45, 62, 53, 0.04) 1px, transparent 0);
-      background-size: 24px 24px;
-    }
-    
-    /* Horizon delicate gradient */
-    .bg-horizon-gradient {
-      background: linear-gradient(
-        180deg,
-        #f4f8f8 0%,
-        #eaf2ee 45%,
-        #dce8e0 75%,
-        #f8f6f0 100%
-      );
+    /* Grain & Paper texture backdrop */
+    body {
+      background-color: #FDFBF7;
+      color: #37413C;
+      background-image: radial-gradient(#8FA89B 0.65px, transparent 0.65px), radial-gradient(#8C7A6B 0.4px, #FDFBF7 0.4px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
     }
 
-    /* Soft scrollbar */
+    /* Subtle custom scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #F4F8F8;
+      background: #FDFBF7;
     }
     ::-webkit-scrollbar-thumb {
-      background: #B6C9BF;
+      background: #CAD5CE;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #8FA89B;
     }
 
-    .reveal-on-scroll {
+    /* Frosted organic card look */
+    .zen-card {
+      background: rgba(253, 251, 247, 0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 219, 208, 0.7);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .zen-card:hover {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(143, 168, 155, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(93, 122, 108, 0.08);
+    }
+
+    /* Section fade transition */
+    .reveal-item {
       opacity: 0;
       transform: translateY(24px);
-      transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal-on-scroll.is-visible {
+    .reveal-item.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Toast notification styling */
+    #toast {
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
   </style>
 </head>
+<body class="font-sans antialiased selection:bg-prairie-sage/20 selection:text-prairie-sage-deep min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
-<body class="bg-prairie-cream text-prairie-dark font-sans antialiased selection:bg-prairie-sage/30 selection:text-prairie-dark relative overflow-x-hidden">
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <canvas id="prairieCanvas" class="w-full h-full opacity-40"></canvas>
+    <!-- Soft gradient glow representing vast sky meeting grassland -->
+    <div class="absolute top-0 inset-x-0 h-[60vh] bg-gradient-to-b from-prairie-sky via-prairie-mist/30 to-transparent"></div>
+    <div class="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#EBF2EC]/50 to-transparent"></div>
+  </div>
 
-  <!-- Ambient Breeze & Seed Pods Canvas -->
-  <canvas id="breezeCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
-
-  <header class="fixed top-0 left-0 right-0 z-40 px-5 sm:px-10 py-5 transition-all duration-300 backdrop-blur-md bg-prairie-cream/70 border-b border-prairie-mist/60">
-    <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <!-- Signature / Identity -->
-      <a href="#hero" class="group flex items-center space-x-3">
-        <span class="w-8 h-8 rounded-full bg-prairie-mist flex items-center justify-center text-prairie-grass text-sm font-serif shadow-inner group-hover:bg-prairie-sage/30 transition-colors">
-          瑛
-        </span>
-        <div class="flex flex-col">
-          <span class="font-serif text-lg tracking-widest text-prairie-dark group-hover:text-prairie-grass transition-colors">张瑞瑛</span>
-          <span class="text-[10px] tracking-widest uppercase text-prairie-clay font-light">Zhang Ruiying</span>
-        </div>
+  <header class="fixed top-4 md:top-6 inset-x-0 z-50 flex justify-center px-4">
+    <nav class="zen-card px-5 py-2.5 rounded-full flex items-center gap-3 sm:gap-6 shadow-sm text-xs sm:text-sm tracking-wider text-prairie-muted">
+      <a href="#hero" class="hover:text-prairie-sage-deep transition-colors font-medium flex items-center gap-1.5">
+        <i data-lucide="feather" class="w-3.5 h-3.5 text-prairie-sage"></i>
+        <span>张瑞瑛</span>
       </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center space-x-8 text-sm font-serif text-prairie-dark/80">
-        <a href="#about" class="hover:text-prairie-grass transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-prairie-grass hover:after:w-full after:transition-all">学识沉淀</a>
-        <a href="#skills" class="hover:text-prairie-grass transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-prairie-grass hover:after:w-full after:transition-all">智能原野</a>
-        <a href="#experience" class="hover:text-prairie-grass transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-prairie-grass hover:after:w-full after:transition-all">步履所向</a>
-        <a href="#certifications" class="hover:text-prairie-grass transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-prairie-grass hover:after:w-full after:transition-all">原野花实</a>
-        <a href="#contact" class="hover:text-prairie-grass transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-prairie-grass hover:after:w-full after:transition-all">山水相逢</a>
-      </nav>
-
-      <!-- Action & Sound / Nature Mode Toggle -->
-      <div class="flex items-center space-x-3">
-        <button id="breezeToggleBtn" title="切换原野清风动效" class="text-xs font-serif px-3 py-1.5 rounded-full border border-prairie-sage/40 bg-prairie-sky/60 hover:bg-prairie-sage/20 text-prairie-grass transition-all flex items-center space-x-1.5">
-          <!-- Wind SVG icon -->
-          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/>
-            <path d="M9.6 4.6A2 2 0 1 1 11 8H2"/>
-            <path d="M12.6 19.4A2 2 0 1 0 14 16H2"/>
-          </svg>
-          <span class="hidden sm:inline" id="breezeStatusText">微风轻抚</span>
-        </button>
-
-        <!-- Mobile Drawer Toggle -->
-        <button id="mobileMenuBtn" class="md:hidden p-2 text-prairie-grass focus:outline-none" aria-label="打开目录">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h12M4 17h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Drawer Overlay Menu -->
-    <div id="mobileMenu" class="hidden md:hidden pt-4 pb-2 border-t border-prairie-mist/50 mt-3 flex flex-col space-y-3 font-serif text-sm px-2">
-      <a href="#about" class="py-1 text-prairie-dark/80 hover:text-prairie-grass mobile-link">学识沉淀 · 教育经历</a>
-      <a href="#skills" class="py-1 text-prairie-dark/80 hover:text-prairie-grass mobile-link">智能原野 · 技能体系</a>
-      <a href="#experience" class="py-1 text-prairie-dark/80 hover:text-prairie-grass mobile-link">步履所向 · 校园实践</a>
-      <a href="#certifications" class="py-1 text-prairie-dark/80 hover:text-prairie-grass mobile-link">原野花实 · 荣誉资质</a>
-      <a href="#contact" class="py-1 text-prairie-dark/80 hover:text-prairie-grass mobile-link">山水相逢 · 联络交流</a>
-    </div>
+      <span class="text-prairie-border">|</span>
+      <a href="#education" class="hover:text-prairie-sage-deep transition-colors">学履</a>
+      <a href="#skills" class="hover:text-prairie-sage-deep transition-colors">研索</a>
+      <a href="#experience" class="hover:text-prairie-sage-deep transition-colors">躬行</a>
+      <a href="#certifications" class="hover:text-prairie-sage-deep transition-colors">荣光</a>
+      <a href="#contact" class="hover:text-prairie-sage-deep transition-colors flex items-center gap-1">
+        <span>寻风</span>
+        <i data-lucide="wind" class="w-3 h-3 text-prairie-sage"></i>
+      </a>
+      <button id="toggleWindBtn" onclick="toggleWind()" class="hidden md:flex items-center gap-1 pl-2 border-l border-prairie-border text-[11px] hover:text-prairie-sage-deep transition-colors" title="启闭微风动效">
+        <i data-lucide="sparkles" class="w-3 h-3 text-prairie-sage"></i>
+        <span id="windStatusText">微风徐徐</span>
+      </button>
+    </nav>
   </header>
 
-  <main class="relative z-10">
-    <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 bg-horizon-gradient relative overflow-hidden prairie-noise">
-      <!-- Delicate decorative horizon line -->
-      <div class="absolute inset-x-0 bottom-12 flex justify-center items-center pointer-events-none opacity-40">
-        <div class="w-full max-w-5xl h-[1px] bg-gradient-to-r from-transparent via-prairie-sage to-transparent"></div>
+  <main class="relative z-10 flex-grow">
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center px-6 pt-24 pb-16 text-center max-w-4xl mx-auto">
+      
+      <!-- Top subtle insignia badge -->
+      <div class="reveal-item inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-prairie-mist/60 border border-prairie-border text-prairie-sage-deep text-xs tracking-widest uppercase mb-8">
+        <i data-lucide="compass" class="w-3.5 h-3.5 animate-spin-slow"></i>
+        <span>塞上清风 · 智原求索</span>
       </div>
 
-      <!-- Center Hero Content -->
-      <div class="max-w-4xl mx-auto text-center reveal-on-scroll is-visible mt-6 sm:mt-10">
-        <!-- Floating poetic badge -->
-        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/70 border border-prairie-mist shadow-sm backdrop-blur-sm mb-8 animate-float-gentle">
-          <svg class="w-3.5 h-3.5 text-prairie-grass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-          <span class="text-xs font-serif text-prairie-grass tracking-widest">内蒙古大草原的宁静心境 · 人工智能研习者</span>
-        </div>
+      <!-- Main Name with Serif Poetry -->
+      <h1 class="reveal-item font-serif text-4xl sm:text-6xl md:text-7xl font-normal text-prairie-charcoal tracking-wide mb-6">
+        张 瑞 瑛
+      </h1>
+      
+      <!-- Gentle sub-identity using 学院 -->
+      <p class="reveal-item text-sm sm:text-base text-prairie-muted tracking-widest font-light mb-10 max-w-xl">
+        黄淮学院 · 计算机与人工智能学院 ｜ 二〇二六级本科
+      </p>
 
-        <!-- Name Title -->
-        <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-normal tracking-[0.2em] text-prairie-dark mb-6">
-          张瑞瑛
-        </h1>
-        <p class="text-xs sm:text-sm tracking-[0.4em] uppercase text-prairie-clay font-light mb-8">
-          Zhang Ruiying &nbsp;·&nbsp; Undergraduate in AI
-        </p>
+      <!-- Horizon line poetic metaphor -->
+      <div class="reveal-item w-24 h-[1px] bg-prairie-sage/50 mb-10"></div>
 
-        <!-- Poetic Tagline -->
-        <div class="max-w-2xl mx-auto mb-10 px-4">
-          <p class="font-serif text-lg sm:text-2xl text-prairie-dark/90 leading-relaxed sm:leading-loose tracking-wider">
-            “心如原野，行致辽阔。<br class="hidden sm:inline"/>以宁静之心，探寻智能之境。”
-          </p>
-          <p class="text-xs sm:text-sm text-prairie-clay mt-3 font-light tracking-widest italic">
-            Exploring the vastness of Artificial Intelligence with a peaceful mind.
-          </p>
-        </div>
+      <!-- Poetic Tagline -->
+      <blockquote class="reveal-item font-serif text-lg sm:text-2xl text-prairie-sage-deep/90 font-light leading-relaxed max-w-2xl px-4 italic mb-12">
+        “心怀旷野，静观微光；<br class="hidden sm:inline">在辽阔的人工智能原野上，守一份从容与澄澈。”
+      </blockquote>
 
-        <!-- Quick Nature Highlights / Philosophy Pills -->
-        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 text-xs text-prairie-grass/90 font-serif mb-12">
-          <span class="px-4 py-1.5 rounded-full bg-prairie-mist/60 border border-prairie-sage/20">黄淮大学计算机与人工智能学院</span>
-          <span class="px-4 py-1.5 rounded-full bg-prairie-mist/60 border border-prairie-sage/20">新生代表 · 班级学委</span>
-          <span class="px-4 py-1.5 rounded-full bg-prairie-mist/60 border border-prairie-sage/20">Prompt & Agent 研习</span>
-        </div>
-
-        <!-- Call to actions -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#about" class="w-full sm:w-auto px-8 py-3 rounded-full bg-prairie-grass text-white text-sm font-serif tracking-widest hover:bg-prairie-grass/90 transition-all shadow-sm shadow-prairie-grass/20 flex items-center justify-center space-x-2">
-            <span>翻阅草木履迹</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-          </a>
-          <a href="#contact" class="w-full sm:w-auto px-8 py-3 rounded-full bg-white/80 border border-prairie-sage/40 text-prairie-dark text-sm font-serif tracking-widest hover:bg-white transition-all">
-            闲叙相识
-          </a>
-        </div>
+      <!-- Minimalist quick action buttons -->
+      <div class="reveal-item flex flex-wrap justify-center items-center gap-4">
+        <a href="#contact" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-prairie-sage text-white text-xs sm:text-sm tracking-wider hover:bg-prairie-sage-deep transition-all duration-300 shadow-sm hover:shadow">
+          <i data-lucide="feather" class="w-3.5 h-3.5"></i>
+          <span>联络致意</span>
+        </a>
+        <a href="#experience" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full zen-card text-prairie-charcoal text-xs sm:text-sm tracking-wider hover:text-prairie-sage-deep transition-all duration-300">
+          <i data-lucide="sun" class="w-3.5 h-3.5 text-prairie-sage"></i>
+          <span>阅览履迹</span>
+        </a>
       </div>
 
-      <!-- Gentle Horizon Scroll Prompt -->
-      <div class="absolute bottom-6 flex flex-col items-center opacity-60 text-prairie-clay text-xs tracking-widest">
-        <span class="mb-2 font-serif text-[11px]">向广袤深处缓行</span>
-        <div class="w-[1px] h-8 bg-prairie-clay animate-pulse"></div>
+      <!-- Downward horizon indicator -->
+      <div class="reveal-item mt-20 text-prairie-muted/50 flex flex-col items-center gap-2">
+        <span class="text-[11px] tracking-widest">向原野深处漫行</span>
+        <i data-lucide="wind" class="w-4 h-4 animate-bounce text-prairie-sage/70"></i>
       </div>
     </section>
 
-    <section id="about" class="py-24 sm:py-32 px-6 max-w-5xl mx-auto prairie-noise">
-      <div class="reveal-on-scroll">
-        <!-- Section Header -->
-        <div class="flex items-center space-x-4 mb-3">
-          <span class="text-xs uppercase tracking-[0.3em] text-prairie-grass font-serif">01 / Foundation</span>
-          <div class="h-[1px] flex-1 bg-prairie-mist"></div>
-        </div>
-        <h2 class="font-serif text-2xl sm:text-3xl tracking-widest text-prairie-dark mb-4">学识沉淀 · 旷野之根</h2>
-        <p class="text-xs sm:text-sm text-prairie-clay font-light max-w-xl mb-12">
-          草原之阔，始于一草一木的生根拔节；智能之行，依循扎实深邃的数理基石。
-        </p>
+    <div class="relative py-8 flex items-center justify-center max-w-5xl mx-auto px-6">
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-prairie-border to-transparent"></div>
+      <span class="absolute px-4 bg-prairie-cream text-prairie-sage text-xs tracking-widest font-serif">
+        草木蔚然 · 学思并进
+      </span>
+    </div>
+
+    <section id="education" class="py-20 px-6 max-w-4xl mx-auto">
+      <div class="reveal-item flex items-center gap-3 mb-10">
+        <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
+        <h2 class="font-serif text-2xl sm:text-3xl text-prairie-charcoal tracking-wide">学履 · 求索</h2>
+        <span class="text-xs text-prairie-muted/70 tracking-widest uppercase ml-2">Education</span>
       </div>
 
-      <!-- Academic Card -->
-      <div class="reveal-on-scroll bg-white/70 backdrop-blur-sm rounded-3xl p-8 sm:p-12 border border-prairie-mist/80 shadow-sm relative overflow-hidden">
-        <!-- Background subtle plant watermarking -->
-        <div class="absolute -right-8 -bottom-8 w-48 h-48 opacity-[0.04] pointer-events-none">
-          <svg viewBox="0 0 100 100" fill="currentColor">
-            <path d="M50 0 C60 30, 80 40, 100 50 C80 60, 60 70, 50 100 C40 70, 20 60, 0 50 C20 40, 40 30, 50 0 Z"/>
-          </svg>
+      <div class="reveal-item zen-card rounded-2xl p-6 sm:p-10 relative overflow-hidden">
+        <!-- Grassland backdrop decoration -->
+        <div class="absolute -right-8 -bottom-8 w-40 h-40 rounded-full bg-prairie-mist/30 blur-2xl pointer-events-none"></div>
+
+        <div class="flex flex-col md:flex-row md:items-baseline md:justify-between border-b border-prairie-border/60 pb-6 mb-6 gap-2">
+          <div>
+            <h3 class="font-serif text-xl sm:text-2xl text-prairie-charcoal font-medium">黄淮学院</h3>
+            <p class="text-sm text-prairie-sage-deep font-normal mt-1">计算机与人工智能学院 · 本科在读 (大一)</p>
+          </div>
+          <span class="text-xs sm:text-sm text-prairie-muted font-mono tracking-wider bg-prairie-mist/50 px-3 py-1 rounded-full self-start md:self-auto">
+            2026.09 — 至今
+          </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          <div class="md:col-span-5 space-y-4">
-            <span class="inline-block px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/80 text-prairie-grass">
-              本科在读 (大一) · 2026.09 – 至今
-            </span>
-            <h3 class="font-serif text-2xl text-prairie-dark tracking-wide">黄淮大学</h3>
-            <p class="text-sm text-prairie-grass font-medium">计算机与人工智能学院</p>
-            <p class="text-xs text-prairie-clay leading-relaxed">
-              立足于现代化算法与智能科学交汇处，以求索笃实的心态，在每一行代码与定理中丈量远方。
-            </p>
-
-            <div class="pt-2 border-t border-prairie-mist/60 space-y-2">
-              <div class="flex items-center space-x-2 text-xs text-prairie-dark">
-                <!-- Nature seed bullet -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Roles in Class -->
+          <div>
+            <h4 class="text-xs tracking-widest uppercase text-prairie-muted mb-3 flex items-center gap-1.5 font-medium">
+              <i data-lucide="leaf" class="w-3.5 h-3.5 text-prairie-sage"></i>
+              <span>担当与角色</span>
+            </h4>
+            <ul class="space-y-2.5 text-sm text-prairie-charcoal/90">
+              <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-prairie-sage"></span>
-                <span class="font-medium">担当角色：</span>
-                <span class="text-prairie-clay">新生代表 · 班级学习委员</span>
-              </div>
-              <div class="flex items-center space-x-2 text-xs text-prairie-dark">
+                <span>班级学习委员（勤勉协助师生研学交流与教学事务）</span>
+              </li>
+              <li class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-prairie-sage"></span>
-                <span class="font-medium">研习状态：</span>
-                <span class="text-prairie-clay">静笃自律，敏于思考，乐于利他分享</span>
-              </div>
-            </div>
+                <span>新生发言代表（开学典礼代表全院新生述志）</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="md:col-span-7 md:border-l md:border-prairie-mist md:pl-8 space-y-6">
-            <h4 class="font-serif text-sm tracking-widest text-prairie-grass uppercase">当前研习核心课程</h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <!-- Course 1 -->
-              <div class="p-4 rounded-2xl bg-prairie-sky/40 border border-prairie-mist/60 transition-transform duration-300 hover:-translate-y-0.5">
-                <span class="text-xs text-prairie-clay block mb-1">编程语言基础</span>
-                <h5 class="font-serif text-sm font-medium text-prairie-dark">Python 程序设计</h5>
-                <p class="text-[11px] text-prairie-clay mt-1 leading-normal">面向算法与原型快速实现，建立简洁优雅的工程范式。</p>
-              </div>
-
-              <!-- Course 2 -->
-              <div class="p-4 rounded-2xl bg-prairie-sky/40 border border-prairie-mist/60 transition-transform duration-300 hover:-translate-y-0.5">
-                <span class="text-xs text-prairie-clay block mb-1">学科宏观视野</span>
-                <h5 class="font-serif text-sm font-medium text-prairie-dark">人工智能导论</h5>
-                <p class="text-[11px] text-prairie-clay mt-1 leading-normal">梳理符号智能到联结主义大模型的演进脉络与伦理思考。</p>
-              </div>
-
-              <!-- Course 3 -->
-              <div class="p-4 rounded-2xl bg-prairie-sky/40 border border-prairie-mist/60 transition-transform duration-300 hover:-translate-y-0.5">
-                <span class="text-xs text-prairie-clay block mb-1">数理基石</span>
-                <h5 class="font-serif text-sm font-medium text-prairie-dark">高等数学</h5>
-                <p class="text-[11px] text-prairie-clay mt-1 leading-normal">极限、微积分与空间解析几何，为连续优化提供数学工具。</p>
-              </div>
-
-              <!-- Course 4 -->
-              <div class="p-4 rounded-2xl bg-prairie-sky/40 border border-prairie-mist/60 transition-transform duration-300 hover:-translate-y-0.5">
-                <span class="text-xs text-prairie-clay block mb-1">矩阵与空间变换</span>
-                <h5 class="font-serif text-sm font-medium text-prairie-dark">线性代数</h5>
-                <p class="text-[11px] text-prairie-clay mt-1 leading-normal">向量空间、特征分解与矩阵运算，理解神经网络嵌入之根本。</p>
-              </div>
+          <!-- Key Courses -->
+          <div>
+            <h4 class="text-xs tracking-widest uppercase text-prairie-muted mb-3 flex items-center gap-1.5 font-medium">
+              <i data-lucide="book-open" class="w-3.5 h-3.5 text-prairie-sage"></i>
+              <span>修习根基</span>
+            </h4>
+            <div class="flex flex-wrap gap-2 text-xs">
+              <span class="px-3 py-1.5 rounded-lg bg-prairie-mist/60 text-prairie-sage-deep">Python 程序设计</span>
+              <span class="px-3 py-1.5 rounded-lg bg-prairie-mist/60 text-prairie-sage-deep">人工智能导论</span>
+              <span class="px-3 py-1.5 rounded-lg bg-prairie-mist/60 text-prairie-sage-deep">高等数学</span>
+              <span class="px-3 py-1.5 rounded-lg bg-prairie-mist/60 text-prairie-sage-deep">线性代数</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="py-24 sm:py-32 px-6 bg-prairie-mist/30 border-y border-prairie-mist/70 prairie-noise">
-      <div class="max-w-5xl mx-auto">
-        <div class="reveal-on-scroll">
-          <div class="flex items-center space-x-4 mb-3">
-            <span class="text-xs uppercase tracking-[0.3em] text-prairie-grass font-serif">02 / Skills & Mindset</span>
-            <div class="h-[1px] flex-1 bg-prairie-mist"></div>
-          </div>
-          <h2 class="font-serif text-2xl sm:text-3xl tracking-widest text-prairie-dark mb-4">智能原野 · 技能探索</h2>
-          <p class="text-xs sm:text-sm text-prairie-clay font-light max-w-xl mb-12">
-            摒弃僵硬的数据条，如原野草叶舒展。将 AI 作为思考与创造的延伸伙伴。
-          </p>
-        </div>
+    <section id="skills" class="py-20 px-6 max-w-4xl mx-auto">
+      <div class="reveal-item flex items-center gap-3 mb-4">
+        <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
+        <h2 class="font-serif text-2xl sm:text-3xl text-prairie-charcoal tracking-wide">研索 · 技艺</h2>
+        <span class="text-xs text-prairie-muted/70 tracking-widest uppercase ml-2">Skills & Explorations</span>
+      </div>
+      <p class="reveal-item text-xs sm:text-sm text-prairie-muted mb-10 max-w-xl">
+        如草原上的水流般柔和，摒弃生硬的刻度，在持续探索中孕育从容坚韧的技术基底。
+      </p>
 
-        <!-- Zen Pebble Pill Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-on-scroll">
-          <!-- Skill Card 1 -->
-          <div class="bg-white/80 rounded-2xl p-6 sm:p-8 border border-prairie-mist hover:border-prairie-sage/60 transition-all duration-300 shadow-sm hover:shadow-md">
-            <div class="flex items-center space-x-3 mb-4">
-              <span class="w-9 h-9 rounded-full bg-prairie-sky flex items-center justify-center text-prairie-grass">
-                <!-- Wind swirl / prompt dialogue SVG -->
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-              </span>
-              <h3 class="font-serif text-lg text-prairie-dark font-medium">Prompt Engineering</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Skill Item 1 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-prairie-mist/70 flex items-center justify-center text-prairie-sage-deep mb-4">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
             </div>
-            <p class="text-xs text-prairie-clay leading-relaxed mb-4">
-              提示词工程与认知引导。善于运用思维链（CoT）、角色情境设定与结构化约束，将自然语言转化为确定性强、高质量的模型输出。
+            <h3 class="font-serif text-base sm:text-lg text-prairie-charcoal font-medium mb-1.5">提示词工程 (Prompt Engineering)</h3>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              善于运用精确语境与结构化提示，引导大模型深度推演，实现高效稳定的任务输出与交互。
             </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">结构化提示词设计</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">Few-Shot 引导</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">长上下文约束</span>
-            </div>
           </div>
-
-          <!-- Skill Card 2 -->
-          <div class="bg-white/80 rounded-2xl p-6 sm:p-8 border border-prairie-mist hover:border-prairie-sage/60 transition-all duration-300 shadow-sm hover:shadow-md">
-            <div class="flex items-center space-x-3 mb-4">
-              <span class="w-9 h-9 rounded-full bg-prairie-sky flex items-center justify-center text-prairie-grass">
-                <!-- Branching tree/agent SVG -->
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <circle cx="12" cy="5" r="2.5"></circle>
-                  <circle cx="6" cy="18" r="2.5"></circle>
-                  <circle cx="18" cy="18" r="2.5"></circle>
-                  <path d="M12 7.5V13m-6 2.5L12 13m6 2.5L12 13"></path>
-                </svg>
-              </span>
-              <h3 class="font-serif text-lg text-prairie-dark font-medium">RAG & Agent 智能体架构</h3>
-            </div>
-            <p class="text-xs text-prairie-clay leading-relaxed mb-4">
-              深入探索检索增强生成（RAG）管道原理与自主智能体（Agent）工作流，探寻知识库分块、向量化检索、工具调用（Tool Use）与多智能体协同设计。
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">知识库向量检索</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">Agent 决策链路</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">工具调用调度</span>
-            </div>
-          </div>
-
-          <!-- Skill Card 3 -->
-          <div class="bg-white/80 rounded-2xl p-6 sm:p-8 border border-prairie-mist hover:border-prairie-sage/60 transition-all duration-300 shadow-sm hover:shadow-md">
-            <div class="flex items-center space-x-3 mb-4">
-              <span class="w-9 h-9 rounded-full bg-prairie-sky flex items-center justify-center text-prairie-grass">
-                <!-- Code stream leaf SVG -->
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </span>
-              <h3 class="font-serif text-lg text-prairie-dark font-medium">Python 脚本与自动化开发</h3>
-            </div>
-            <p class="text-xs text-prairie-clay leading-relaxed mb-4">
-              熟练编写清晰、自解释的 Python 自动化脚本，处理数据管道、文本规范化、API 接口调用与小型工具开发，注重可维护性。
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">自动化数据处理</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">API 协同调用</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">轻量工具封装</span>
-            </div>
-          </div>
-
-          <!-- Skill Card 4 -->
-          <div class="bg-white/80 rounded-2xl p-6 sm:p-8 border border-prairie-mist hover:border-prairie-sage/60 transition-all duration-300 shadow-sm hover:shadow-md">
-            <div class="flex items-center space-x-3 mb-4">
-              <span class="w-9 h-9 rounded-full bg-prairie-sky flex items-center justify-center text-prairie-grass">
-                <!-- Compass / chart SVG -->
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </span>
-              <h3 class="font-serif text-lg text-prairie-dark font-medium">AI + 数据分析实战基础</h3>
-            </div>
-            <p class="text-xs text-prairie-clay leading-relaxed mb-4">
-              结合智能辅助进行探索性数据分析（EDA），理解特征清洗、分布统计与直观可视化，以敏锐洞察提炼真实世界的数据故事。
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">探索性分析 (EDA)</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">数据清洗沉淀</span>
-              <span class="px-3 py-1 rounded-full text-xs font-serif bg-prairie-mist/50 text-prairie-grass">自然交互可视化</span>
-            </div>
+          <div class="mt-4 pt-3 border-t border-prairie-border/40 flex items-center gap-2 text-[11px] text-prairie-sage-deep">
+            <span class="w-1.5 h-1.5 rounded-full bg-prairie-sage"></span>
+            <span>精准引导 · 逻辑严密</span>
           </div>
         </div>
 
-        <!-- Quiet Zen Quote on Learning -->
-        <div class="mt-12 p-6 rounded-2xl border border-dashed border-prairie-sage/30 text-center max-w-2xl mx-auto reveal-on-scroll">
-          <p class="font-serif text-sm text-prairie-dark/80 italic">
-            “不追赶喧嚣的浪潮，而如草原细雨，静默润泽每一株知识的根须。”
-          </p>
+        <!-- Skill Item 2 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-prairie-mist/70 flex items-center justify-center text-prairie-sage-deep mb-4">
+              <i data-lucide="compass" class="w-4 h-4"></i>
+            </div>
+            <h3 class="font-serif text-base sm:text-lg text-prairie-charcoal font-medium mb-1.5">RAG 与智能体 (Agent) 架构</h3>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              探究外挂知识库检索增强生成原理，理解自主协同智能体工作流设计与任务拆解。
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-prairie-border/40 flex items-center gap-2 text-[11px] text-prairie-sage-deep">
+            <span class="w-1.5 h-1.5 rounded-full bg-prairie-sage"></span>
+            <span>知识互通 · 智能协同</span>
+          </div>
+        </div>
+
+        <!-- Skill Item 3 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-prairie-mist/70 flex items-center justify-center text-prairie-sage-deep mb-4">
+              <i data-lucide="feather" class="w-4 h-4"></i>
+            </div>
+            <h3 class="font-serif text-base sm:text-lg text-prairie-charcoal font-medium mb-1.5">Python 脚本与自动化</h3>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              熟练运用 Python 编写高效逻辑，处理日常数据流通与自动化脚本，奠定扎实的代码底蕴。
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-prairie-border/40 flex items-center gap-2 text-[11px] text-prairie-sage-deep">
+            <span class="w-1.5 h-1.5 rounded-full bg-prairie-sage"></span>
+            <span>简洁高效 · 逻辑清晰</span>
+          </div>
+        </div>
+
+        <!-- Skill Item 4 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-9 h-9 rounded-xl bg-prairie-mist/70 flex items-center justify-center text-prairie-sage-deep mb-4">
+              <i data-lucide="mountain" class="w-4 h-4"></i>
+            </div>
+            <h3 class="font-serif text-base sm:text-lg text-prairie-charcoal font-medium mb-1.5">AI + 数据分析基础</h3>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              结合数学思维与现代 AI 辅助分析工具，进行数据清洗、基础洞察挖掘与直观可视化呈现。
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-prairie-border/40 flex items-center gap-2 text-[11px] text-prairie-sage-deep">
+            <span class="w-1.5 h-1.5 rounded-full bg-prairie-sage"></span>
+            <span>洞微察著 · 数据之美</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="py-24 sm:py-32 px-6 max-w-5xl mx-auto prairie-noise">
-      <div class="reveal-on-scroll">
-        <div class="flex items-center space-x-4 mb-3">
-          <span class="text-xs uppercase tracking-[0.3em] text-prairie-grass font-serif">03 / Journey</span>
-          <div class="h-[1px] flex-1 bg-prairie-mist"></div>
-        </div>
-        <h2 class="font-serif text-2xl sm:text-3xl tracking-widest text-prairie-dark mb-4">步履所向 · 校园实践</h2>
-        <p class="text-xs sm:text-sm text-prairie-clay font-light max-w-xl mb-14">
-          在晨曦的讲台上发声，在日常的课堂里助友，在广阔的开源社区中共同游弋。
-        </p>
-      </div>
+    <div class="relative py-8 flex items-center justify-center max-w-5xl mx-auto px-6">
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-prairie-border to-transparent"></div>
+      <span class="absolute px-4 bg-prairie-cream text-prairie-sage text-xs tracking-widest font-serif">
+        长风万里 · 行远自迩
+      </span>
+    </div>
 
-      <!-- Steppe Pathway / Timeline Layout -->
-      <div class="relative pl-6 sm:pl-10 space-y-12 before:content-[''] before:absolute before:left-2 sm:before:left-3 before:top-2 before:bottom-2 before:w-[1px] before:bg-gradient-to-b before:from-prairie-grass/60 before:via-prairie-sage/40 before:to-transparent">
+    <section id="experience" class="py-20 px-6 max-w-4xl mx-auto">
+      <div class="reveal-item flex items-center gap-3 mb-4">
+        <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
+        <h2 class="font-serif text-2xl sm:text-3xl text-prairie-charcoal tracking-wide">躬行 · 阅历</h2>
+        <span class="text-xs text-prairie-muted/70 tracking-widest uppercase ml-2">Campus & Community</span>
+      </div>
+      <p class="reveal-item text-xs sm:text-sm text-prairie-muted mb-12 max-w-xl">
+        不仅埋首书册，更在开学讲台与开源社区的原野上坦荡行走，传递声音与热忱。
+      </p>
+
+      <div class="relative pl-6 sm:pl-8 border-l border-prairie-border/80 space-y-12">
+        <!-- Experience 1 -->
+        <div class="reveal-item relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-prairie-cream border-2 border-prairie-sage group-hover:bg-prairie-sage transition-colors duration-300"></div>
+          <div class="zen-card p-6 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 class="font-serif text-lg text-prairie-charcoal font-medium">开学典礼新生发言代表</h3>
+              <span class="text-xs text-prairie-muted font-mono">2026 秋</span>
+            </div>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              代表全校二〇二六级新生于迎新典礼发言。以沉静有力的表达抒发青年求学抱负，展现计算机学院学子的思辨与温润气度。
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="reveal-item relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-prairie-cream border-2 border-prairie-sage group-hover:bg-prairie-sage transition-colors duration-300"></div>
+          <div class="zen-card p-6 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 class="font-serif text-lg text-prairie-charcoal font-medium">班级学习委员</h3>
+              <span class="text-xs text-prairie-muted font-mono">2026.09 — 至今</span>
+            </div>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              积极履行职责，密切沟通学院任课教师与同窗研学所需，搭建课程资源共享网络，协助营造踏实自律的学习风尚。
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 3: Active in Datawhale & iFlytek AI Academy -->
+        <div class="reveal-item relative group">
+          <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-3.5 h-3.5 rounded-full bg-prairie-cream border-2 border-prairie-sage group-hover:bg-prairie-sage transition-colors duration-300"></div>
+          <div class="zen-card p-6 rounded-2xl">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+              <h3 class="font-serif text-lg text-prairie-charcoal font-medium">开源社区探索者 · 研学共进</h3>
+              <span class="text-xs text-prairie-muted font-mono">持续活跃</span>
+            </div>
+            <p class="text-xs sm:text-sm text-prairie-muted leading-relaxed">
+              深度参与 <strong>Datawhale</strong> 开源研学项目与 <strong>科大讯飞 AI 学院</strong> 知识营，与前沿开发者并行，在开放包容的环境中快速吸纳人工智能最新工程实践。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative py-8 flex items-center justify-center max-w-5xl mx-auto px-6">
+      <div class="w-full h-px bg-gradient-to-r from-transparent via-prairie-border to-transparent"></div>
+      <span class="absolute px-4 bg-prairie-cream text-prairie-sage text-xs tracking-widest font-serif">
+        玉汝于成 · 印鉴芳华
+      </span>
+    </div>
+
+    <section id="certifications" class="py-20 px-6 max-w-4xl mx-auto">
+      <div class="reveal-item flex items-center gap-3 mb-4">
+        <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
+        <h2 class="font-serif text-2xl sm:text-3xl text-prairie-charcoal tracking-wide">履迹 · 认证荣光</h2>
+        <span class="text-xs text-prairie-muted/70 tracking-widest uppercase ml-2">Certifications & Honors</span>
+      </div>
+      <p class="reveal-item text-xs sm:text-sm text-prairie-muted mb-10 max-w-xl">
+        每一步脚印皆是向深处开辟的明证，以严谨的态度获取权威行业机构认证。
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
         
-        <!-- Timeline Item 1 -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[23px] sm:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-prairie-cream border-2 border-prairie-grass shadow-sm"></div>
-          <div class="bg-white/70 p-6 sm:p-8 rounded-2xl border border-prairie-mist/80 transition-all hover:bg-white">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <span class="font-serif text-base sm:text-lg text-prairie-dark font-medium">开学典礼 · 本科新生代表发言</span>
-              <span class="text-xs font-serif px-3 py-1 rounded-full bg-prairie-mist/60 text-prairie-grass">迎新启航</span>
+        <!-- Cert Card 1: 阿里云 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-prairie-mist/60 text-prairie-sage-deep flex-shrink-0 flex items-center justify-center mt-1">
+            <i data-lucide="cloud" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-grow">
+            <span class="text-[11px] tracking-wider uppercase text-prairie-muted font-mono">Alibaba Cloud</span>
+            <h3 class="font-serif text-base text-prairie-charcoal font-medium mt-0.5 mb-2">人工智能训练师认证</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">高级认证 (Senior)</span>
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">初级认证 (Junior)</span>
             </div>
-            <p class="text-xs sm:text-sm text-prairie-clay leading-relaxed">
-              作为全院新生代表立于开学典礼讲台，代表 2026 级新同学发言。向师长与同侪分享对智能科技与人文关怀融合的思考，表达“笃志求真、步履不停”的大学初心。
-            </p>
           </div>
         </div>
 
-        <!-- Timeline Item 2 -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[23px] sm:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-prairie-cream border-2 border-prairie-grass shadow-sm"></div>
-          <div class="bg-white/70 p-6 sm:p-8 rounded-2xl border border-prairie-mist/80 transition-all hover:bg-white">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <span class="font-serif text-base sm:text-lg text-prairie-dark font-medium">班级学习委员 · 师友共学的桥梁</span>
-              <span class="text-xs font-serif px-3 py-1 rounded-full bg-prairie-mist/60 text-prairie-grass">常态奉献</span>
+        <!-- Cert Card 2: 科大讯飞 AI 学院 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-prairie-mist/60 text-prairie-sage-deep flex-shrink-0 flex items-center justify-center mt-1">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-grow">
+            <span class="text-[11px] tracking-wider uppercase text-prairie-muted font-mono">iFlytek AI Academy</span>
+            <h3 class="font-serif text-base text-prairie-charcoal font-medium mt-0.5 mb-2">科大讯飞 AI 学院专项工程认证</h3>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">RAG 工程师</span>
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">大模型微调工程师</span>
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">智能体 (Agent) 工程师</span>
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">Prompt 工程师</span>
             </div>
-            <p class="text-xs sm:text-sm text-prairie-clay leading-relaxed">
-              主动承担班级教学辅助与学风建设，积极协助各科任课教师传递课业要求与教学反馈。组织日常学习研讨小队，分享编程笔记与解题心得，让集体在互信协作中共同前进。
-            </p>
           </div>
         </div>
 
-        <!-- Timeline Item 3 -->
-        <div class="relative reveal-on-scroll">
-          <div class="absolute -left-[23px] sm:-left-[35px] top-1.5 w-3.5 h-3.5 rounded-full bg-prairie-cream border-2 border-prairie-grass shadow-sm"></div>
-          <div class="bg-white/70 p-6 sm:p-8 rounded-2xl border border-prairie-mist/80 transition-all hover:bg-white">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <span class="font-serif text-base sm:text-lg text-prairie-dark font-medium">开源学习社区深度研学 · Datawhale & 讯飞 AI 大学堂</span>
-              <span class="text-xs font-serif px-3 py-1 rounded-full bg-prairie-mist/60 text-prairie-grass">持续精进</span>
+        <!-- Cert Card 3: Datawhale -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-prairie-mist/60 text-prairie-sage-deep flex-shrink-0 flex items-center justify-center mt-1">
+            <i data-lucide="feather" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-grow">
+            <span class="text-[11px] tracking-wider uppercase text-prairie-muted font-mono">Datawhale Community</span>
+            <h3 class="font-serif text-base text-prairie-charcoal font-medium mt-0.5 mb-2">开源大模型与应用实战</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">LLM 工程师能力认证</span>
+              <span class="px-2.5 py-1 rounded-md text-xs bg-prairie-mist/70 text-prairie-sage-deep border border-prairie-border/60">Agent 智能体实战认证</span>
             </div>
-            <p class="text-xs sm:text-sm text-prairie-clay leading-relaxed">
-              走出传统课堂边界，长期活跃于国内领先的 AI 开源社群 Datawhale 及科大讯飞 AI 大学堂。与全国高校优秀的学习者同频共振，参与动手实践组队打卡、大模型应用研讨，将前沿理念落地为实战经验。
+          </div>
+        </div>
+
+        <!-- Cert Card 4: 编程与数据分析 -->
+        <div class="reveal-item zen-card p-6 rounded-2xl flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-prairie-mist/60 text-prairie-sage-deep flex-shrink-0 flex items-center justify-center mt-1">
+            <i data-lucide="sun" class="w-5 h-5"></i>
+          </div>
+          <div class="flex-grow">
+            <span class="text-[11px] tracking-wider uppercase text-prairie-muted font-mono">Specialized Certs</span>
+            <h3 class="font-serif text-base text-prairie-charcoal font-medium mt-0.5 mb-2">AI+ 编程与数据分析认证</h3>
+            <p class="text-xs text-prairie-muted leading-relaxed">
+              涵盖基础数据清洗、多模态智能体协作分析及工程脚本实践，取得权威评估资质。
             </p>
           </div>
         </div>
@@ -481,348 +489,220 @@
       </div>
     </section>
 
-    <section id="certifications" class="py-24 sm:py-32 px-6 bg-prairie-mist/20 border-t border-prairie-mist/70 prairie-noise">
-      <div class="max-w-5xl mx-auto">
-        <div class="reveal-on-scroll">
-          <div class="flex items-center space-x-4 mb-3">
-            <span class="text-xs uppercase tracking-[0.3em] text-prairie-grass font-serif">04 / Fruit & Flowers</span>
-            <div class="h-[1px] flex-1 bg-prairie-mist"></div>
-          </div>
-          <h2 class="font-serif text-2xl sm:text-3xl tracking-widest text-prairie-dark mb-4">原野花实 · 荣誉资质</h2>
-          <p class="text-xs sm:text-sm text-prairie-clay font-light max-w-xl mb-12">
-            每一张证书，都是在这片广袤知识草原上拾得的坚实花实。
-          </p>
+    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto">
+      <div class="reveal-item zen-card rounded-3xl p-8 sm:p-14 relative overflow-hidden text-center">
+        <!-- Floating gentle background shape -->
+        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-prairie-sage to-transparent"></div>
+        
+        <div class="w-12 h-12 rounded-full bg-prairie-mist/70 mx-auto flex items-center justify-center text-prairie-sage-deep mb-6">
+          <i data-lucide="wind" class="w-6 h-6"></i>
         </div>
 
-        <!-- Certification Cards Categorized -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-on-scroll">
-          
-          <!-- Category 1: Alibaba Cloud -->
-          <div class="bg-white/80 rounded-2xl p-6 border border-prairie-mist/80 shadow-sm flex flex-col justify-between hover:border-prairie-sage transition-all">
-            <div>
-              <div class="flex items-center space-x-2 text-xs font-serif text-prairie-grass mb-3">
-                <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
-                <span>阿里云生态认证</span>
-              </div>
-              <h3 class="font-serif text-base text-prairie-dark font-medium mb-3">AI 训练师资质认证</h3>
-              <p class="text-xs text-prairie-clay leading-relaxed mb-6">
-                涵盖大模型数据清洗标注、模型行为监督与业务意图对齐的系统化专业评测。
-              </p>
-            </div>
-            <div class="space-y-2 border-t border-prairie-mist/60 pt-4">
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-prairie-dark font-serif">人工智能训练师 (高级)</span>
-                <span class="text-[10px] text-prairie-grass bg-prairie-sky px-2 py-0.5 rounded">Senior Certified</span>
-              </div>
-              <div class="flex items-center justify-between text-xs">
-                <span class="text-prairie-dark font-serif">人工智能训练师 (初级)</span>
-                <span class="text-[10px] text-prairie-grass bg-prairie-sky px-2 py-0.5 rounded">Junior Certified</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 2: iFlytek AI University -->
-          <div class="bg-white/80 rounded-2xl p-6 border border-prairie-mist/80 shadow-sm flex flex-col justify-between hover:border-prairie-sage transition-all">
-            <div>
-              <div class="flex items-center space-x-2 text-xs font-serif text-prairie-grass mb-3">
-                <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
-                <span>科大讯飞 AI 大学堂认证</span>
-              </div>
-              <h3 class="font-serif text-base text-prairie-dark font-medium mb-3">前沿大模型工程化体系</h3>
-              <p class="text-xs text-prairie-clay leading-relaxed mb-6">
-                系统性掌握认知大模型技术链条，从输入层 Prompt 到模型微调及自主智能体落地。
-              </p>
-            </div>
-            <div class="space-y-1.5 border-t border-prairie-mist/60 pt-4 text-xs text-prairie-dark font-serif">
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>RAG 知识检索增强应用工程师</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>模型微调 (Fine-tuning) 工程师</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>Agent 智能体架构工程师</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>Prompt 提示词工程师认证</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category 3: Datawhale & Practice -->
-          <div class="bg-white/80 rounded-2xl p-6 border border-prairie-mist/80 shadow-sm flex flex-col justify-between hover:border-prairie-sage transition-all">
-            <div>
-              <div class="flex items-center space-x-2 text-xs font-serif text-prairie-grass mb-3">
-                <span class="w-2 h-2 rounded-full bg-prairie-sage"></span>
-                <span>Datawhale 社区 & 专项技能</span>
-              </div>
-              <h3 class="font-serif text-base text-prairie-dark font-medium mb-3">开源实战与数据分析</h3>
-              <p class="text-xs text-prairie-clay leading-relaxed mb-6">
-                在社区实战中锤炼 LLM 落地能力，同时夯实编程语言与数据分析专业能力。
-              </p>
-            </div>
-            <div class="space-y-1.5 border-t border-prairie-mist/60 pt-4 text-xs text-prairie-dark font-serif">
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>Datawhale 大语言模型 (LLM) 工程师</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>Datawhale Agent 智能体工程师</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>AI+ 编程技能认证</span>
-              </div>
-              <div class="flex items-center space-x-2">
-                <span class="text-prairie-grass text-xs">✓</span>
-                <span>智能数据分析专项认证</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="py-24 sm:py-32 px-6 max-w-5xl mx-auto prairie-noise">
-      <div class="reveal-on-scroll">
-        <div class="flex items-center space-x-4 mb-3">
-          <span class="text-xs uppercase tracking-[0.3em] text-prairie-grass font-serif">05 / Encounter</span>
-          <div class="h-[1px] flex-1 bg-prairie-mist"></div>
-        </div>
-        <h2 class="font-serif text-2xl sm:text-3xl tracking-widest text-prairie-dark mb-4">山水相逢 · 联络相识</h2>
-        <p class="text-xs sm:text-sm text-prairie-clay font-light max-w-xl mb-12">
-          草原虽远，微风相连。无论探讨学术、分享灵感抑或畅聊 AI，皆期待与您相遇。
+        <h2 class="font-serif text-2xl sm:text-3xl text-prairie-charcoal tracking-wide mb-3">
+          寻风 · 邀约与共话
+        </h2>
+        <p class="text-xs sm:text-sm text-prairie-muted max-w-lg mx-auto mb-10 leading-relaxed">
+          草木有灵，心有澄澈。无论是学术研讨、开源项目交流还是单纯的同行问候，皆欢迎来信相询。
         </p>
-      </div>
 
-      <!-- Contact Board -->
-      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 sm:p-12 border border-prairie-mist shadow-sm reveal-on-scroll">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Contact Cards Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left max-w-2xl mx-auto mb-8">
           
-          <!-- Tel Card -->
-          <div class="p-6 rounded-2xl bg-prairie-cream border border-prairie-mist/80 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-center space-x-3 text-prairie-grass mb-4">
-                <!-- Phone SVG -->
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                <span class="font-serif text-sm">电话 / Mobile</span>
-              </div>
-              <p class="font-serif text-base text-prairie-dark tracking-wide mb-1" id="phoneText">192-8335-6327</p>
-              <p class="text-[11px] text-prairie-clay">欢迎致电交流或短信留言</p>
+          <!-- WeChat -->
+          <button onclick="copyToClipboard('zrqyk000', '微信号已复制到剪贴板')" class="p-4 rounded-xl bg-prairie-sky-light/80 hover:bg-white border border-prairie-border/60 transition-all text-left group cursor-pointer focus:outline-none focus:ring-1 focus:ring-prairie-sage">
+            <div class="flex items-center justify-between text-prairie-muted group-hover:text-prairie-sage-deep mb-1 text-xs">
+              <span>微信 / WeChat</span>
+              <i data-lucide="copy" class="w-3.5 h-3.5 opacity-60 group-hover:opacity-100"></i>
             </div>
-            <button onclick="copyToClipboard('19283356327', '电话号码已复制')" class="mt-6 w-full py-2 rounded-xl bg-white border border-prairie-mist text-xs font-serif text-prairie-dark hover:bg-prairie-sage/10 transition-colors flex items-center justify-center space-x-1.5">
-              <span>一键复制号码</span>
-            </button>
-          </div>
+            <div class="font-mono text-sm sm:text-base font-medium text-prairie-charcoal">zrqyk000</div>
+            <div class="text-[10px] text-prairie-muted/70 mt-1">点击复制微信</div>
+          </button>
 
-          <!-- Email Card -->
-          <div class="p-6 rounded-2xl bg-prairie-cream border border-prairie-mist/80 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-center space-x-3 text-prairie-grass mb-4">
-                <!-- Mail SVG -->
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                <span class="font-serif text-sm">电子邮箱 / Email</span>
-              </div>
-              <p class="font-serif text-base text-prairie-dark tracking-wide mb-1" id="emailText">zrqyk000@qq.com</p>
-              <p class="text-[11px] text-prairie-clay">长期查阅，适合详细交流探讨</p>
+          <!-- Email -->
+          <button onclick="copyToClipboard('zrqyk000@qq.com', '邮箱地址已复制到剪贴板')" class="p-4 rounded-xl bg-prairie-sky-light/80 hover:bg-white border border-prairie-border/60 transition-all text-left group cursor-pointer focus:outline-none focus:ring-1 focus:ring-prairie-sage">
+            <div class="flex items-center justify-between text-prairie-muted group-hover:text-prairie-sage-deep mb-1 text-xs">
+              <span>电子邮箱</span>
+              <i data-lucide="copy" class="w-3.5 h-3.5 opacity-60 group-hover:opacity-100"></i>
             </div>
-            <button onclick="copyToClipboard('zrqyk000@qq.com', '电子邮箱已复制')" class="mt-6 w-full py-2 rounded-xl bg-white border border-prairie-mist text-xs font-serif text-prairie-dark hover:bg-prairie-sage/10 transition-colors flex items-center justify-center space-x-1.5">
-              <span>复制邮箱地址</span>
-            </button>
-          </div>
+            <div class="font-mono text-sm sm:text-base font-medium text-prairie-charcoal truncate" title="zrqyk000@qq.com">zrqyk000@qq.com</div>
+            <div class="text-[10px] text-prairie-muted/70 mt-1">点击复制邮箱</div>
+          </button>
 
-          <!-- WeChat Card -->
-          <div class="p-6 rounded-2xl bg-prairie-cream border border-prairie-mist/80 flex flex-col justify-between group">
-            <div>
-              <div class="flex items-center space-x-3 text-prairie-grass mb-4">
-                <!-- WeChat nature chat SVG -->
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                </svg>
-                <span class="font-serif text-sm">微信 / WeChat</span>
-              </div>
-              <p class="font-serif text-base text-prairie-dark tracking-wide mb-1" id="wechatText">zrqyk000</p>
-              <p class="text-[11px] text-prairie-clay">添加时请注明：学校 / 姓名 / 来意</p>
+          <!-- Phone -->
+          <button onclick="copyToClipboard('192-8335-6327', '电话号码已复制到剪贴板')" class="p-4 rounded-xl bg-prairie-sky-light/80 hover:bg-white border border-prairie-border/60 transition-all text-left group cursor-pointer focus:outline-none focus:ring-1 focus:ring-prairie-sage">
+            <div class="flex items-center justify-between text-prairie-muted group-hover:text-prairie-sage-deep mb-1 text-xs">
+              <span>联络电话</span>
+              <i data-lucide="copy" class="w-3.5 h-3.5 opacity-60 group-hover:opacity-100"></i>
             </div>
-            <button onclick="copyToClipboard('zrqyk000', '微信号已复制')" class="mt-6 w-full py-2 rounded-xl bg-white border border-prairie-mist text-xs font-serif text-prairie-dark hover:bg-prairie-sage/10 transition-colors flex items-center justify-center space-x-1.5">
-              <span>复制微信号</span>
-            </button>
-          </div>
+            <div class="font-mono text-sm sm:text-base font-medium text-prairie-charcoal">192-8335-6327</div>
+            <div class="text-[10px] text-prairie-muted/70 mt-1">点击复制号码</div>
+          </button>
 
         </div>
+
+        <p class="text-xs text-prairie-muted/70 font-serif italic">
+          “风吹草低见牛羊，云淡天高待鹏举。”
+        </p>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-prairie-mist/60 bg-white/40 py-12 px-6 relative z-10 text-center text-xs font-serif text-prairie-clay space-y-3">
-    <p class="tracking-widest">
-      张瑞瑛 · Zhang Ruiying &nbsp;©&nbsp; <span id="yearSpan">2026</span>
-    </p>
-    <p class="text-[11px] font-light text-prairie-clay/80 tracking-wider">
-      “静水流深，原野辽阔。以素心致知，与时代同行。”
-    </p>
+  <footer class="relative z-10 py-10 border-t border-prairie-border/60 text-center text-xs text-prairie-muted">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <i data-lucide="mountain" class="w-4 h-4 text-prairie-sage"></i>
+        <span>张瑞瑛 (Zhang Ruiying) · 个人履历集</span>
+      </div>
+      <p class="text-[11px] text-prairie-muted/70">
+        设计意蕴取自内蒙古苍茫原野 · 心随境远
+      </p>
+      <div class="font-mono text-[11px] text-prairie-muted/60">
+        黄淮学院 · 计算机与人工智能学院 2026
+      </div>
+    </div>
   </footer>
 
-  <div id="copyToast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-prairie-dark/90 text-prairie-cream px-5 py-2.5 rounded-full text-xs font-serif tracking-widest shadow-lg opacity-0 pointer-events-none transition-all duration-300 transform translate-y-2">
-    已复制到剪贴板
+  <!-- Toast Container -->
+  <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 zen-card px-5 py-2.5 rounded-full shadow-lg border border-prairie-sage/40 flex items-center gap-2.5 pointer-events-none text-xs text-prairie-charcoal">
+    <i data-lucide="feather" class="w-4 h-4 text-prairie-sage"></i>
+    <span id="toast-message">信息已复制</span>
   </div>
 
   <script>
-    // 1. Prairie Wind Canvas Particles
-    const canvas = document.getElementById('breezeCanvas');
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Clipboard copy mechanism conforming strictly to iframe rules
+    function copyToClipboard(text, successMsg) {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast(successMsg);
+      } catch (err) {
+        showToast('未能完成复制，请手动选择');
+      }
+    }
+
+    // Peaceful Toast handler
+    let toastTimeout;
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.add('show');
+      
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    // Scroll reveal observer (Breeze-like gentle fade-in)
+    document.addEventListener("DOMContentLoaded", () => {
+      const revealItems = document.querySelectorAll('.reveal-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+      });
+
+      revealItems.forEach(el => observer.observe(el));
+    });
+
+    // Gentle canvas simulation representing flowing wind on grasslands
+    const canvas = document.getElementById('prairieCanvas');
     const ctx = canvas.getContext('2d');
+    let width, height;
     let particles = [];
-    let isBreezeActive = true;
-    let animFrameId = null;
+    let isWindActive = true;
+    let animationFrameId;
 
     function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      initParticles();
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
 
-    // Floating spore / grass petal particle class
-    class BreezeParticle {
+    class WindParticle {
       constructor() {
-        this.reset(true);
+        this.reset();
       }
-
-      reset(init = false) {
-        this.x = init ? Math.random() * canvas.width : -30;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.2 + 0.8;
-        this.speedX = Math.random() * 0.9 + 0.3;
-        this.speedY = Math.sin(Math.random() * Math.PI) * 0.3 - 0.1;
-        this.opacity = Math.random() * 0.45 + 0.15;
-        this.wave = Math.random() * 10;
+      reset() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.length = Math.random() * 40 + 15;
+        this.speed = Math.random() * 0.8 + 0.3;
+        this.opacity = Math.random() * 0.22 + 0.05;
+        this.curve = Math.random() * 1.5 - 0.75;
       }
-
       update() {
-        this.wave += 0.02;
-        this.x += this.speedX;
-        this.y += Math.sin(this.wave) * 0.4 + this.speedY;
-
-        if (this.x > canvas.width + 30 || this.y > canvas.height + 20 || this.y < -20) {
-          this.reset();
+        this.x += this.speed * 1.4;
+        this.y += Math.sin(this.x * 0.005) * 0.35;
+        if (this.x > width + 50) {
+          this.x = -50;
+          this.y = Math.random() * height;
         }
       }
-
       draw() {
         ctx.beginPath();
-        // Sage / soft jade tones
-        ctx.fillStyle = `rgba(143, 168, 155, ${this.opacity})`;
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.strokeStyle = `rgba(143, 168, 155, ${this.opacity})`;
+        ctx.lineWidth = 0.9;
+        ctx.moveTo(this.x, this.y);
+        ctx.quadraticCurveTo(this.x + this.length / 2, this.y + this.curve * 8, this.x + this.length, this.y);
+        ctx.stroke();
       }
     }
 
     function initParticles() {
       particles = [];
-      const count = Math.floor(window.innerWidth / 35);
+      const count = Math.floor(width / 32); // Responsive count
       for (let i = 0; i < count; i++) {
-        particles.push(new BreezeParticle());
+        particles.push(new WindParticle());
       }
     }
-    initParticles();
 
-    function animateBreeze() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      if (isBreezeActive) {
-        for (let i = 0; i < particles.length; i++) {
-          particles[i].update();
-          particles[i].draw();
-        }
-      }
-      animFrameId = requestAnimationFrame(animateBreeze);
+    function animateWind() {
+      if (!isWindActive) return;
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      animationFrameId = requestAnimationFrame(animateWind);
     }
-    window.onload = function() {
-      animateBreeze();
-    };
 
-    // Toggle Breeze interaction
-    const breezeToggleBtn = document.getElementById('breezeToggleBtn');
-    const breezeStatusText = document.getElementById('breezeStatusText');
-    breezeToggleBtn.addEventListener('click', () => {
-      isBreezeActive = !isBreezeActive;
-      if (isBreezeActive) {
-        breezeStatusText.textContent = "微风轻抚";
-        breezeToggleBtn.classList.remove('opacity-60');
+    function toggleWind() {
+      isWindActive = !isWindActive;
+      const statusText = document.getElementById('windStatusText');
+      if (isWindActive) {
+        statusText.textContent = "微风徐徐";
+        animateWind();
+        showToast("微风轻抚原野");
       } else {
-        breezeStatusText.textContent = "风止心静";
-        breezeToggleBtn.classList.add('opacity-60');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        statusText.textContent = "风止心静";
+        cancelAnimationFrame(animationFrameId);
+        ctx.clearRect(0, 0, width, height);
+        showToast("风止心静，万籁俱寂");
       }
-    });
-
-    // 2. Scroll Intersection Observer for peaceful subtle fade-up
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px"
-    });
-
-    revealElements.forEach(el => observer.observe(el));
-
-    // 3. Mobile Navigation Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close mobile nav upon clicking links
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // 4. Safe Clipboard Copy Utility
-    function copyToClipboard(text, customMessage = '已复制') {
-      const tempInput = document.createElement('input');
-      tempInput.value = text;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      try {
-        document.execCommand('copy');
-        showToast(customMessage);
-      } catch (err) {
-        showToast('复制失败，请手动记录');
-      }
-      document.body.removeChild(tempInput);
     }
 
-    function showToast(message) {
-      const toast = document.getElementById('copyToast');
-      toast.textContent = message;
-      toast.classList.remove('opacity-0', 'translate-y-2');
-      toast.classList.add('opacity-100', 'translate-y-0');
-
-      setTimeout(() => {
-        toast.classList.remove('opacity-100', 'translate-y-0');
-        toast.classList.add('opacity-0', 'translate-y-2');
-      }, 2200);
-    }
-
-    // Set Dynamic Year
-    document.getElementById('yearSpan').textContent = new Date().getFullYear();
+    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('load', () => {
+      resizeCanvas();
+      animateWind();
+    });
   </script>
 </body>
 </html>
